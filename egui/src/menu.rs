@@ -283,8 +283,8 @@ impl MenuRoot {
         {
             // menu open and button clicked or esc pressed
             return MenuResponse::Close;
-        } else if (response.clicked() && !root.is_menu_open(id))
-            || (response.hovered() && root.is_some())
+        } else if response.hovered() &&
+            (!root.is_menu_open(id) || root.is_some())
         {
             // menu not open and button clicked
             // or button hovered while other menu is open
